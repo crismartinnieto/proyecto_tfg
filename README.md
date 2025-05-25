@@ -55,7 +55,7 @@ proyecto/
 
 ---
 
-## File Responsibilities
+## File Explications
 
 ### `langchain/`
 
