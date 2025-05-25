@@ -1,0 +1,11 @@
+langchain
+langchain-neo4j
+langchain-ollama
+neo4j
+numpy
+flask
+openai
+langchain_community
+mediawikiapi
+wikibase-rest-api-client
+rdflib
