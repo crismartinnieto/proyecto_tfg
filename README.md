@@ -30,28 +30,27 @@ This project aims to design and develop an intelligent system that enhances Larg
 
 ```
 proyecto/
-├── data/                 # Directory for input/output data
-├── import/               # Import scripts or data assets
-├── langchain/            # Backend and LangChain integration
-│   ├── backend.py        # Main controller and request dispatcher
-│   ├── consultas.py      # Functions to query the knowledge graph
-│   ├── langchain_api.py  # LangChain API interface
-│   ├── Dockerfile        # Dockerfile for the backend service
-│   └── requirements.txt  # Python dependencies for backend
-├── logs/                 # System and app logs
-├── plugins/              # Custom plugins or extensions
-├── scripts/              # Data loading and transformation logic
-│   ├── load_data.py      # Script to insert data into the knowledge graph
-│   ├── load_data.cql     # Cypher queries to populate the graph database
-│   ├── Dockerfile        # Dockerfile for the loader service
-│   └── requirements.txt  # Dependencies for data loader
-├── streamlit/            # Frontend components and app
-│   ├── streamlit_app.py       # Main Streamlit interface
-│   ├── streamlit_estilos.py  # Custom styles and UI configuration
-│   ├── Dockerfile             # Dockerfile for the frontend service
-│   └── requirements.txt       # Frontend dependencies
-├── docker-compose.yml    # Docker configuration for all services
-└── README.md             # This file
+├── data/                 
+├── import/               
+├── langchain/            
+│   ├── backend.py        
+│   ├── consultas.py      
+│   ├── langchain_api.py  
+│   ├── Dockerfile        
+│   └── requirements.txt  
+├── logs/                 
+├── plugins/              
+├── scripts/              
+│   ├── load_data.py      
+│   ├── load_data.cql     
+│   ├── Dockerfile        
+├── streamlit/            
+│   ├── streamlit_app.py       
+│   ├── streamlit_estilos.py  
+│   ├── Dockerfile             
+│   └── requirements.txt       
+├── docker-compose.yml    
+└── README.md             
 ```
 
 ---
@@ -60,10 +59,10 @@ proyecto/
 
 ### `langchain/`
 
-* **backend.py**: Orquestra el flujo de peticiones desde el frontend y gestiona la lógica de negocio.
-* **consultas.py**: Contiene funciones para consultar el grafo de conocimiento con Cypher.
-* **langchain\_api.py**: Define la interfaz para conectar LangChain con el sistema.
-* **Dockerfile** y **requirements.txt**: Configuración del entorno backend.
+* **backend.py**: Orquesta el flujo de consulta intentando obtener respuestas primero desde Neo4j, luego desde Wikidata, luego DBpedia, y finalmente desde un modelo LLM local si todo lo anterior falla.
+* **consultas.py**:  Implementa funciones para consultar Neo4j, Wikidata, DBpedia y el modelo LLM local, encargándose de obtener y procesar respuestas según la fuente.
+* **langchain_api.py**: Expone una API REST con Flask que recibe preguntas vía POST, llama a backend.py y devuelve la respuesta en formato JSON.
+* **Dockerfile** y **requirements.txt**: Define la imagen de Docker que instala las dependencias y lanza el servicio Flask al arrancar el contenedor.
 
 ### `scripts/`
 
