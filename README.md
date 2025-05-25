@@ -66,12 +66,12 @@ proyecto/
 
 ### `scripts/`
 
-* **load\_data.py**: Lee y procesa datos para insertarlos en el grafo.
-* **load\_data.cql**: Contiene las sentencias Cypher para poblar la base de datos.
-* **Dockerfile** y **requirements.txt**: Entorno de carga de datos.
+* **load_data.py**: Script en Python que carga datos CSV en la base de datos Neo4j usando el lenguaje Cypher.
+* **load_data.cql**: Script Cypher que define las instrucciones para crear nodos y relaciones en Neo4j a partir de los datos.
+* **Dockerfile** y **requirements.txt**: Configuración del entorno para ejecutar el script de carga de datos en un contenedor Docker con las dependencias necesarias.
 
 ### `streamlit/`
 
-* **streamlit\_app.py**: Aplicación principal de visualización e interacción.
-* **streamlit\_estilos.py**: Define estilos y configuraciones visuales.
-* **Dockerfile** y **requirements.txt**: Entorno de frontend.
+* **streamlit_app.py**: Archivo principal de la aplicación que permite al usuario introducir preguntas, seleccionar fuentes de datos (Wikidata, DBpedia) y visualizar las respuestas devueltas por una API.
+* **streamlit_estilos.py**: Módulo que personaliza visualmente la interfaz de Streamlit con estilos institucionales y muestra los logos de la UPM y el GSI.
+* **Dockerfile** y **requirements.txt**: Define la imagen Docker para desplegar la aplicación de Streamlit, instalando las dependencias necesarias y configurando el puerto de acceso.
