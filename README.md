@@ -11,20 +11,17 @@ This project aims to design and develop an intelligent system that enhances Larg
 
    ```bash
    cd proyecto
-````
-
+   ```
 3. Create the required directories:
 
    ```bash
    mkdir data logs plugins
    ```
-
 4. Build and start the containers:
 
    ```bash
    docker compose up --build
    ```
-
 5. Open your browser and go to: [http://localhost:8501](http://localhost:8501)
 
 ---
