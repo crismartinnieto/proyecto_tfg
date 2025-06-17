@@ -24,7 +24,7 @@ descriptions = df['descripcion_ingles'].dropna().tolist()
 logger.info(f"Total de descripciones encontradas: {len(descriptions)}")
 
 logger.info("Inicializando el modelo LLM y el transformador de grafo...")
-llm = ChatOpenAI(model="gpt-4-turbo", temperature=0, max_tokens=None, timeout=None, max_retries=2, base_url="https://openrouter.ai/api/v1",  api_key="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")
+llm = ChatOpenAI(model="gpt-4-turbo", temperature=0, max_tokens=None, timeout=None, max_retries=2, base_url="https://openrouter.ai/api/v1",  api_key=API_KEY)
 llm_transformer = LLMGraphTransformer(llm=llm)
 
 logger.info("Creando documentos a partir de las descripciones...")
