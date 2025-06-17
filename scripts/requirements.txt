@@ -1,0 +1,8 @@
+pandas
+langchain
+langchain_community
+langchain_experimental
+langchain_ollama
+langchain_neo4j
+neo4j
+openai
